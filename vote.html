@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Europe - Links</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional inline CSS for specific styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            position: relative; /* Position relative for absolute positioning of current date */
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 0 auto;
+            max-width: 1200px; /* Limit container width */
+            padding: 20px;
+        }
+        .sidebar {
+            width: 200px;
+            padding: 20px;
+            background-color: #ffffff; /* Change background color */
+            border-radius: 10px;
+            position: fixed; /* Fix the position */
+            top: 100px; /* Align to top with additional space for header */
+            bottom: 0; /* Align to bottom */
+            left: 0; /* Align to left */
+            overflow-y: auto; /* Add scrollbar if content exceeds height */
+            transition: width 0.5s; /* Add transition for expanding/collapsing */
+        }
+        .sidebar button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50; /* Change button color */
+            color: #fff; /* Button text color */
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .sidebar button:hover {
+            background-color: #45a049; /* Button color on hover */
+        }
+        .hidden {
+            display: none;
+        }
+        .current-date {
+            position: fixed; /* Position fixed for fixed positioning */
+            bottom: 20px; /* 20px from bottom */
+            right: 20px; /* 20px from right */
+            font-size: 14px;
+            color: #333;
+            background-color: white; /* Ensure visibility over background */
+            padding: 5px 10px; /* Add padding for better appearance */
+            border-radius: 5px; /* Add border radius for rounded corners */
+        }
+        .history-section, .date-section {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.5s ease;
+        }
+        .arrow-down {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid #4CAF50; /* Arrow color */
+            display: inline-block;
+            margin-left: 5px;
+        }
+        .arrow-right {
+            width: 0;
+            height: 0;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 5px solid #4CAF50; /* Arrow color */
+            display: inline-block;
+            margin-right: 5px;
+        }
+        .expanded {
+            max-height: 200px; /* Adjust as needed */
+        }
+    </style>
+</head>
+<body class="vote-bg">
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="about.html">About the Project</a></li>
+                <li><a href="vote.html" class="current-page">Votes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <!-- Sidebar with GUI -->
+        <div class="sidebar" id="sidebar">
+            <button onclick="toggleHistory()">Vote History<span class="arrow-down"></span></button>
+            <div id="history" class="history-section hidden">
+                <button onclick="toggleDate()">2024. 05. 08<span class="arrow-right"></span></button>
+                <div id="date" class="date-section hidden">
+                    <!-- Placeholder for vote count and options -->
+                    Vote Count: [value]<br>
+                    Option 1: [voted count]<br>
+                    Option 2: [voted count]<br>
+                    Option 3: [voted count]<br>
+                    Option 4: [voted count]<br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Current Date and Time -->
+    <div class="current-date" id="current-date"></div>
+
+    <script>
+        // Function to toggle visibility of history section
+        function toggleHistory() {
+            var historySection = document.getElementById("history");
+            historySection.classList.toggle("expanded");
+        }
+
+        // Function to toggle visibility of date section
+        function toggleDate() {
+            var dateSection = document.getElementById("date");
+            dateSection.classList.toggle("hidden");
+        }
+
+        // Update current date and time dynamically
+        function updateCurrentDate() {
+            var currentDate = new Date();
+            var dateString = currentDate.toLocaleString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' });
+            document.getElementById("current-date").textContent = dateString;
+        }
+
+        // Update current date and time every second
+        setInterval(updateCurrentDate, 1000);
+    </script>
+
+</body>

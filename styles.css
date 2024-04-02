@@ -1,0 +1,211 @@
+header {
+    background-image: url("img/headerimg.png");
+    background-color: #32CD32;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+    background-size: cover; /* Scale the background image to cover the entire header */
+}
+
+body {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.header-image {
+    display: block;
+    width: 100%; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.menu-bg {
+    background-image: url('img/ProjectEuropeMap.png');
+    background-size: cover;
+}
+
+.download-bg {
+    background-image: url('img/background4.jpg');
+    background-size: cover;
+}
+
+.about-bg {
+    background-image: url('img/background5.jpg');
+    background-size: cover;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+
+nav li {
+    margin: 5px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 24px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #45a049;
+}
+
+h1 {
+    color: rgb(40, 255, 94);
+    text-align: center;
+}
+
+p {
+    color: rgb(50, 180, 255, 0.671);
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+nav a.current-page {
+    color: #666;
+    pointer-events: none;
+    background-color: #3D8B40;
+}
+
+nav a.current-page:hover {
+    background-color: #3D8B40;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    header {
+        padding: 10px;
+        text-align: center;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
+.project-info-link {
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    transition: background-color 0.3s ease;
+}
+
+.project-info-link:hover {
+    background-color: #45a049;
+}
+
+.project-info-section {
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Style for highlighting "Project Europe" */
+.highlight {
+    color: #4CAF50; /* Green color */
+    font-size: 36px; /* Larger font size */
+}
+
+/* Style for download buttons */
+.download-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+/* Style for download button */
+.download-link {
+    margin-top: 20px; /* Add some space between heading and button */
+}
+
+.release-button {
+    text-align: center;
+    margin: 0 20px; /* Add some margin around buttons */
+}
+
+.release-text {
+    margin-bottom: 10px;
+    color: #4CAF50; /* Green color */
+}
+
+.release-button .btn-disabled {
+    background-color: #8B0000; /* Dark red color */
+    color: #fff; /* White text color */
+    cursor: not-allowed; /* Display disabled cursor */
+}
+
+.release-button .btn:hover {
+    background-color: #45a049; /* Darker green color on hover */
+}
+
+.release-button .btn {
+    display: inline-block;
+    padding: 15px 30px; /* Increased padding for bigger buttons */
+    font-size: 18px; /* Increased font size */
+    background-color: #4CAF50; /* Green color */
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.download-link .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green color */
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.download-link .btn:hover {
+    background-color: #45a049; /* Darker green color on hover */
+}
+
+.highlight {
+    color: #32CD32;
+}
